@@ -3,7 +3,7 @@ Resources:
     Type: AWS::EC2::Instance
     Properties:
       ImageId: ami-0c7217cdde317cfec  # Replace this with your desired AMI ID
-      InstanceType: t2.nano
+      InstanceType: t2.micro
       KeyName: my-key-pair
       SecurityGroupIds:
         - sg-00e5c5f044ef9e3e5  # Replace this with your security group ID
