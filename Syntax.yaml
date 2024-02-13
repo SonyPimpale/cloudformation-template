@@ -1,0 +1,80 @@
+# YAML Basic Script
+
+# Comments in YAMl starts with a '#'
+
+# Scalers (basic data types)
+
+String_example: "I am learning YAMl"
+integer_exaple: 19
+float_exaple: 1.19
+boolean_example: true/false
+
+# Lists (set of ordered collection of items)
+
+list_example:
+
+  - item1
+  - item2
+  - item3
+  - item4
+
+# Nested List
+
+nested_list_example:
+
+  - - nested_item1
+    - nested_item2
+  - - nested_item3
+    - nested_item4
+
+# Dictionaries (no structured key-va;ue pair)
+
+dictionary_example:
+
+  key1: value1
+  key2: value2
+  DevOps: Engineering
+
+# Nested Directories 
+
+nested_directory_example: 
+
+  parent_key: 
+    child_key1: child_value1
+    child_key2: child_value2
+
+#  Mixed data types 
+
+mixed_example: 
+
+  - key: value
+  - 10
+  - true
+  - nested_list: 
+    - item1
+    - item2
+  - nested_directory:
+    nested_key: nested_value
+    nested_key1: nested_value1
+
+# multi-line string
+multi_line_string: |
+  this is a multi line 
+  string in yaml 
+  example
+  it preserves line breaks
+
+# special characters
+special_characters_example: "this is a special character line €#¢∞§¶•"
+
+# yaml documents (Its seperated by '---')
+
+document1: 
+  key1: value1
+  key2: value2
+
+---
+document2:
+  key3: value3
+  key4: value4
+

@@ -1,0 +1,10 @@
+Resources:
+  MyEC2Instance:
+    Type: AWS::EC2::Instance
+    Properties:
+      ImageId: ami-0c7217cdde317cfec  # Replace this with your desired AMI ID
+      InstanceType: t2.nano
+      KeyName: my-key-pair
+      SecurityGroupIds:
+        - sg-00e5c5f044ef9e3e5  # Replace this with your security group ID
+      SubnetId: subnet-0357e108716b410de  # Replace this with your subnet ID
