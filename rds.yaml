@@ -1,0 +1,33 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: Create an RDS instance
+
+Parameters:
+  DBInstanceIdentifier:
+    Type: String
+    Description: Name for the RDS instance
+  DBName:
+    Type: String
+    Description: Name of the initial database
+  DBUsername:
+    Type: String
+    Description: Username for the database
+  DBPassword:
+    Type: String
+    NoEcho: true
+    Description: Password for the database
+
+Resources:
+  MyDBInstance:
+    Type: AWS::RDS::DBInstance
+    Properties:
+      DBInstanceIdentifier: !Ref DBInstanceIdentifier
+      DBName: !Ref DBName
+      AllocatedStorage: 20
+      DBInstanceClass: db.t2.micro
+      Engine: mysql
+      EngineVersion: '5.7'
+      MasterUsername: !Ref DBUsername
+      MasterUserPassword: !Ref DBPassword
+      MultiAZ: false
+      PubliclyAccessible: false
+      StorageType: gp2
