@@ -1,0 +1,28 @@
+Resources:
+  MyVPC:
+    Type: 'AWS::EC2::VPC'
+    Properties:
+      CidrBlock: '10.0.0.0/16'
+      EnableDnsSupport: true
+      EnableDnsHostnames: true
+
+  PeerVPC:
+    Type: 'AWS::EC2::VPC'
+    Properties:
+      CidrBlock: '192.168.0.0/16'
+      EnableDnsSupport: true
+      EnableDnsHostnames: true
+
+  VPCPeeringConnection:
+    Type: 'AWS::EC2::VPCPeeringConnection'
+    Properties:
+      PeerVpcId: !Ref PeerVPC
+      VpcId: !Ref MyVPC
+
+  VPCPeeringConnectionRoute:
+    Type: 'AWS::EC2::Route'
+    DependsOn: VPCPeeringConnection
+    Properties:
+      RouteTableId: !Ref MyRouteTable
+      DestinationCidrBlock: '192.168.0.0/16'
+      VpcPeeringConnectionId: !Ref VPCPeeringConnection
